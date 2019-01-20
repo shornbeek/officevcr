@@ -12,6 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 </head>
 
@@ -67,14 +68,42 @@ canvas{
 #msgList {
     width: 100%;
     height: 120px;
+    position: relative;
+    top: -20px;
 }
 #video {
     width: 100%;
 }   
+
+#message {
+    margin-bottom: 11px;
+    margin-top: -18px;
+}
 .linker {
     margin-top: 25px;
-}    
+}  
 
+.Blink {
+  animation: blinker 1.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+}
+@keyframes blinker {  
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+
+
+#overcan {
+    top: -35px;
+    right: -10px;
+    position: relative;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+        color: white;
+}
 
 </style>
 
@@ -104,8 +133,9 @@ canvas{
                 <video src="" id="video" autoplay="true"></video>
                 <canvas  id="preview"></canvas>
             </div>
-            
-            <input type="button" id="mixBut" class="btn start"  value="Start Meeting" />
+
+            <div id="overcan"><i class="fa fa-circle text-danger Blink"></i>&nbsp; LIVE MEETING</div>
+                  <!-- <input type="button" id="mixBut" class="btn start"  value="Start Meeting" /> -->
             <!-- <button type="button" class="btn btn-success">Start Meeting</button> -->
 
             <div class="messages-wrapper">
@@ -173,23 +203,23 @@ canvas{
 <script src="js/conference.js"></script>
 
 <script>
-    var mixBut = document.getElementById("mixBut");
+//     var mixBut = document.getElementById("mixBut");
   
-  mixBut.addEventListener("click", Start);
+//   mixBut.addEventListener("click", Start);
   
-  function Start(){
-      console.log("Started");
-      mixBut.removeEventListener("click", Start);
-      mixBut.addEventListener("click", Stop);
-      mixBut.value = "Stop Meeting";
-  }
+//   function Start(){
+//       console.log("Started");
+//       mixBut.removeEventListener("click", Start);
+//       mixBut.addEventListener("click", Stop);
+//       mixBut.value = "Stop Meeting";
+//   }
   
-  function Stop(){
-      console.log("Stopped");
-      mixBut.removeEventListener("click", Stop);
-      mixBut.addEventListener("click", Start);
-      mixBut.value = "Start Meeting";
-  }
+//   function Stop(){
+//       console.log("Stopped");
+//       mixBut.removeEventListener("click", Stop);
+//       mixBut.addEventListener("click", Start);
+//       mixBut.value = "Start Meeting";
+//   }
   </script>
 
 
