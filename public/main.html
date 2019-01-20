@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Conference Start</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/lumen/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+</head>
+
+
+<style>
+
+
+  #mymodal {
+    /* margin-right: 40%;
+    margin-left: 40%; */
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 0;
+  }
+
+  ul {
+    margin-left: 30%;
+    margin-right: 20%;
+  }
+
+  img {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 20px;
+  }
+
+  .modal-btn {
+    border-color: #127ba3;
+    width: 100%;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+
+  p {
+    color: gray;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .devise {
+    max-width: 500px;
+    margin-top: 20px;
+  }
+  /* .far {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+  }
+  .fas {
+    text-align: center;
+  } */
+
+
+</style>
+
+<body>
+
+  <nav class="navbar fixed-top navbar-light bg-light">
+    <a class="navbar-brand" href="/main.html">Office App</a>
+
+    <div class="footer">
+      <a href="mailto:Stephen_Hornbeek@yahoo.com?Subject=Room%20Key:%20http://localhost:8080/conference.html" data-toggle="modal"
+        data-target="#myModal" target="_top">Get Room Key #</a>
+    </div>
+    <!-- <a class="navbar-brand" href="https://socket.io/">Share Key# http://localhost:8080/conference.html</a> -->
+  </nav>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <!-- Button trigger modal -->
+        <center>
+          <button type="button" id="mymodal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            Get Virtual Conference Room
+            <!-- Host A Meeting -->
+          </button>
+        </center>
+        <h1>Simply Better Web Conferencing</h1>
+        <p>Host and attend free web meetings anywhere, any time.</p>
+        <center>
+          <img src="https://bluejeans.github.io/api-rest-meetings/site/img/bjnmeeting.png">
+        </center>
+        <h2>No credit card. No commitment. Unlimited meetings free forever!</h2>
+
+
+        <center>
+            <img src="https://trueconf.com/images/devices1-w450.png" class="devise">
+         
+          <h2>Works on All devises</h2>
+         
+          </center>
+
+          <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  <center>
+                    <i class="fas fa-video fa-5x"></i>
+                  <p>Video and audio conferencing with no software downloads!</p>
+                </center>
+                </div>
+                <div class="col-sm">
+                  <center>
+                  <i class="far fa-comment-alt fa-5x"></i>
+                 <p>Live video and text chat with all meeting guest.</p>
+                </center>
+                </div>
+                <div class="col-sm">
+                  <center>
+                    <i class="far fa-address-card fa-5x"></i>
+                    <p>Personal URL links everyone directly into the meeting.</p>
+                  </center>
+                </div>
+              </div>
+            </div>
+        
+          <center> <button type="button" id="mymodal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+              Get Virtual Conference Room
+                <!-- Get Mobile Conference Room -->
+              </button>  </center>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p> Sign up to get a room key!</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+
+
+
+
+        </div>
+        <div class="modal-body">
+
+          <div class="container">
+            <div class="row">
+              <ul class="list-group ">
+                <!-- <li class="list-group-item new-item"> -->
+                <!-- <form class="createUser"> -->
+                <div class="form-group">
+                  <label for="user">Name:</label>
+                  <input type="text" id="user">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="text" id="email">
+                </div>
+
+                <a href="conference.html">
+                  <button id="start" class="btn btn-primary btn-lg modal-btn" type="submit">Start</button>
+                </a>
+                <!-- </form> -->
+                <!-- </li> -->
+                <span class="todo-container">
+                </span>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- <div id="result"></div> -->
+
+  <!-- Custom Script -->
+  <!-- <script src="js/view.js" type="text/javascript"></script> -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

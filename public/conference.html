@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Room</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/lumen/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+</head>
+
+
+<style>
+
+
+body {
+    padding-top: 10%;
+}
+img {
+    float: left;
+}
+.col {
+    background-color: #FA4A8A;
+}
+
+.btn {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: lightgray; */
+}
+
+.start {
+    
+    background-color: lightgray;
+}
+
+#subBtn {
+    margin-bottom: 10%;
+}
+
+form{
+  width:100%;
+  display:grid;
+  grid-template-columns:2; 
+}
+
+form textarea{
+  min-height:10vh;
+}
+
+canvas{
+    border: solid 1px black;
+    display: none;
+}
+
+#canWrap{
+    text-align: center;
+   
+}
+
+#msgList {
+    width: 100%;
+    height: 120px;
+}
+#video {
+    width: 100%;
+}   
+.linker {
+    margin-top: 25px;
+}    
+
+
+</style>
+
+<body>
+
+<nav class="navbar fixed-top navbar-light bg-light">
+        <a class="navbar-brand" href="/main.html">Office App</a>
+    <div class="footer">
+
+        <a href="mailto:Stephen_Hornbeek@yahoo.com?Subject=Room%20Key:%20http://localhost:8080/conference.html" target="_top">Share Room Key #</a>
+    </div>
+  </nav>
+ 
+
+  
+
+  
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-8">
+                
+            <center>Room Key:  <a class="navbar-brand linker" href="https://socket.io/">http://localhost:8080/<span id="result"></span></a></center>
+
+            <div id="canWrap">
+                <video src="" id="video" autoplay="true"></video>
+                <canvas  id="preview"></canvas>
+            </div>
+            
+            <input type="button" id="mixBut" class="btn start"  value="Start Meeting" />
+            <!-- <button type="button" class="btn btn-success">Start Meeting</button> -->
+
+            <div class="messages-wrapper">
+                <textarea name="" id="msgList" cols="118" rows="5" disabled></textarea>
+                <form>
+                    <input id="message" required placeholder="Have a question ask it here!"></input>
+                    <button type="button" class="btn btn-primary" id="subBtn">Message The Group</button>
+                </form>
+
+                <!-- <div class="user-profile-details">
+                                        <ul>
+                                          <li class="blue">
+                                             <img src="https://orig00.deviantart.net/0044/f/2017/243/e/0/8113715395117362027_account_id_1_by_chibi_kohai-dblysnw.png" alt="profile pic" width="50px" height="50px" />
+                                            <h4>Your presentation is the best. but why use doubel quotes? </h4>
+                                            <label>Foo</label>
+                                          </li>
+                                          <li class="red">
+                                             <img src="https://orig00.deviantart.net/0044/f/2017/243/e/0/8113715395117362027_account_id_1_by_chibi_kohai-dblysnw.png" alt="profile pic" width="50px" height="50px" />
+                                            <h4>What is your favorite fruit?</h4>
+                                            <label>Foo</label>
+                                          </li><li class="blue">
+                                             <img src="https://orig00.deviantart.net/0044/f/2017/243/e/0/8113715395117362027_account_id_1_by_chibi_kohai-dblysnw.png" alt="profile pic" width="50px" height="50px" />
+                                            <h4>How fast does a wood chuck chuck if a wood chuck could chuck wood?</h4>
+                                            <label>Baz</label>
+                                          </li>
+                                        </ul>
+                                    </div> -->
+            </div>
+
+        </div>
+        <div class="col-md-4">
+
+            <div class="user-profile-details">
+                <ul>
+                    <li class="blue">
+                        <img src="https://orig00.deviantart.net/0044/f/2017/243/e/0/8113715395117362027_account_id_1_by_chibi_kohai-dblysnw.png"
+                            alt="profile pic" width="50px" height="50px" />
+                        <h3>Foo</h3>
+                        <label>hornbeek@gmail.com</label>
+                    </li>
+                    <li class="red">
+                        <img src="https://orig00.deviantart.net/0044/f/2017/243/e/0/8113715395117362027_account_id_1_by_chibi_kohai-dblysnw.png"
+                            alt="profile pic" width="50px" height="50px" />
+                        <h3>Bar</h3>
+                        <label>jake234@hotmail.com</label>
+                    </li>
+                    <li class="blue">
+                        <img src="https://orig00.deviantart.net/0044/f/2017/243/e/0/8113715395117362027_account_id_1_by_chibi_kohai-dblysnw.png"
+                            alt="profile pic" width="50px" height="50px" />
+                        <h3>Baz</h3>
+                        <label>bigpun@yahoo.com</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/conference.js"></script>
+
+<script>
+    var mixBut = document.getElementById("mixBut");
+  
+  mixBut.addEventListener("click", Start);
+  
+  function Start(){
+      console.log("Started");
+      mixBut.removeEventListener("click", Start);
+      mixBut.addEventListener("click", Stop);
+      mixBut.value = "Stop Meeting";
+  }
+  
+  function Stop(){
+      console.log("Stopped");
+      mixBut.removeEventListener("click", Stop);
+      mixBut.addEventListener("click", Start);
+      mixBut.value = "Start Meeting";
+  }
+  </script>
+
+
+</html>
