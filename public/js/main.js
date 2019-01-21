@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
 
-    $("#mymodal").on("click", function(event) {
+    $(".room").on("click", function(event) {
              
         var newRoom = {
             roomID: Random(),
