@@ -2,17 +2,34 @@
 
 $(document).ready(function(){
 
+    $("#mymodal").on("click", function(event) {
+             
+        var newRoom = {
+            roomID: Random(),
+            userID: [Random(),]
+        }
+        console.log(newRoom);
+        $.post("api/room", newRoom).then(function(data){
+            console.log(data)
+        });
+    });
+
+
+
     $("#start").on("click", function(event) {
         
         var newUser = {
             name: $("#user").val().trim(),
             email: $("#email").val().trim(),
-            random: Random(),
+            // random: Random(),
+            message: []
         }
         console.log(newUser);
         $.post("api/users", newUser).then(function(data){
             console.log(data)
         });
+
+        
            // Clear localStorage
            localStorage.clear();
     
@@ -23,6 +40,8 @@ $(document).ready(function(){
     localStorage.setItem("email", newUser.email);
     localStorage.setItem("id", newUser.random);
     });
+
+    
         $("#name-display").text(localStorage.getItem("name"));
         $("#email-display").text(localStorage.getItem("email"));
       
