@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+            <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <img id="play">
+      
+        <!-- <audio id="aplay"> -->
+          </audio>
+    </body>
+<script type="text/javascript">
+ 
+    var socket = io();
+        socket.on('stream',(image)=>{
+            $('#play').attr('src',image);
+            $('#aplay').attr('src',image);
+            console.log(image);
+            
+        });
+ 
+</script>
+</html>
