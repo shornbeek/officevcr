@@ -8,9 +8,14 @@ const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 
 
+
+
 var msgs = [];
-var curentUsers = [];
-var currentRooms = [];
+
+
+  
+ 
+
 
 
 const PORT = process.env.PORT || 8080;
@@ -29,29 +34,15 @@ db.sequelize.sync({}).then(function() {
 });
 
 
-io.on("connection", (socket) => {
+io.on('connection', (socket)=>{
   console.log("User Connected");
-  socket.emit("listUsers", curentUsers);
+
   socket.emit("messages", msgs);
   socket.on("message", (msg)=>{
     console.log('message: ' + msg);
     msgs.push(msg);
     io.emit("message", msg);
   });
-  socket.on("stream", (image)=> {
-    socket.broadcast.emit("stream", image);
-  
-  });
-  socket.on("addUser", (user)=> {
-    curentUsers.push(user);
-    console.log(curentUsers);
-    io.emit("listUsers", curentUsers);
-  });
-  socket.on("disconnect", ()=>{
-    var i = curentUsers.indexOf(socket);
-    curentUsers.splice(i, 1);
-    io.emit("listUsers", curentUsers);
-  });
-  
 });
+
 
