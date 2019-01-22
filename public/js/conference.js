@@ -24,6 +24,17 @@ $("#subBtn").on("click", (e) => {
     $("#message").val("");
 });
 
+$(".chatform").submit ( (event)=> {
+    console.log("hello ")
+
+event.preventDefault();
+var user = localStorage.getItem("name");
+var email = localStorage.getItem("email");
+var emit = user + ": " + $("#message").val();
+socket.emit("message", emit);
+$("#message").val("");
+})
+
 
 $(document).ready(function(){
 

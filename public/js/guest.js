@@ -151,6 +151,17 @@ socket.on("listUsers", (data)=>{
     }
 });
 
+$(".chatform").submit((event)=> {
+    event.preventDefault();
+   
+    var user = localStorage.getItem("name");
+    var email = localStorage.getItem("email");
+    var emit = user + ": " + $("#message").val();
+    socket.emit("message", emit);
+    $("#message").val("");
+    })
+    
+
 socket.on('stream', (image) => {
     $('#play').attr('src', image);
 });
