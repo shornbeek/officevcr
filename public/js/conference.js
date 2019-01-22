@@ -17,8 +17,10 @@ socket.on("messages", (data) => {
 
 $("#subBtn").on("click", (e) => {
     e.preventDefault();
-
-    socket.emit("message", $("#message").val());
+    var user = localStorage.getItem("name");
+    var email = localStorage.getItem("email");
+    var emit = user + ": " + $("#message").val();
+    socket.emit("message", emit);
     $("#message").val("");
 });
 
