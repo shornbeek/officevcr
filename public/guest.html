@@ -2,220 +2,120 @@
 <html lang="en">
 
 
-        <head>
-                <meta charset="UTF-8">
-                <title>Conference Room</title>
-                <!-- Latest compiled and minified CSS & JS -->
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/lumen/bootstrap.min.css" />
-                <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-                <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
-                <script src="https://code.jquery.com/jquery.js"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-                <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-                
-                
-            </head>
-            
-            
-            <style>
-            body {
-                padding-top: 10%;
-            }
-            img {
-                float: left;
-            }
-            .col {
-                background-color: #FA4A8A;
-            }
-            .btn {
-                width: 100%;
-                font-family: 'Montserrat', sans-serif;
-                /* background-color: lightgray; */
-            }
-            .start {
-                
-                background-color: lightgray;
-            }
-            #subBtn {
-                margin-bottom: 10%;
-            }
-            form{
-              width:100%;
-              display:grid;
-              grid-template-columns:2; 
-            }
-            form textarea{
-              min-height:10vh;
-            }
-            canvas{
-                border: solid 1px black;
-            }
-            #canWrap{
-                margin: 0 auto;
-               
-            }
-            #msgList {
-                width: 100%;
-                height: 120px;
-            }
-            #play {
-                width: 100%;
-            }
-            </style>
-            
-            <body>
-            
-            <nav class="navbar fixed-top navbar-light bg-light">
-                    <a class="navbar-brand" href="/main.html">Office App</a>
-            
-                <!-- <div class="footer">
-                    <a href="mailto:Stephen_Hornbeek@yahoo.com?Subject=Room%20Key:%20http://localhost:8080/conference.html" target="_top">Share Room Key #</a>
-                </div> -->
-                <!-- <a class="navbar-brand" href="https://socket.io/">Share Key# http://localhost:8080/conference.html</a> -->
-              </nav>
-            
-              
-            
-            <div class="container">
-            
-                <div class="row">
-                    <div class="col-md-8">
-            
-                        <div id="canWrap"><img src="" id="play" /></div>
-                        
-                        <!-- <input type="button" id="mixBut" class="btn start"  value="Start Meeting" /> -->
-                        <!-- <button type="button" class="btn btn-success">Start Meeting</button> -->
-            
-                        <div class="messages-wrapper">
-                            <textarea name="" id="msgList" cols="118" rows="5" disabled></textarea>
-                            <form>
-                                <input id="message" required placeholder="Have a question ask it here!"></input>
-                                <button type="button" class="btn btn-primary" id="subBtn">Message The Group</button>
-                            </form>
-                        </div>
-            
-            
-            
-            
-                    </div>
-                    <div class="col-md-4">
-            
-                        <div class="user-profile-details">
-                            <ul>
-                                <li class="blue">
-                                    <img src="https://orig00.deviantart.net/0044/f/2017/243/e/0/8113715395117362027_account_id_1_by_chibi_kohai-dblysnw.png"
-                                        alt="profile pic" width="50px" height="50px" />
-                                    <h3>Foo</h3>
-                                    <label>hornbeek@gmail.com</label>
-                                </li>
-                                <li class="red">
-                                    <img src="https://orig00.deviantart.net/0044/f/2017/243/e/0/8113715395117362027_account_id_1_by_chibi_kohai-dblysnw.png"
-                                        alt="profile pic" width="50px" height="50px" />
-                                    <h3>Bar</h3>
-                                    <label>jake234@hotmail.com</label>
-                                </li>
-                                <li class="blue">
-                                    <img src="https://orig00.deviantart.net/0044/f/2017/243/e/0/8113715395117362027_account_id_1_by_chibi_kohai-dblysnw.png"
-                                        alt="profile pic" width="50px" height="50px" />
-                                    <h3>Baz</h3>
-                                    <label>bigpun@yahoo.com</label>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Room</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/lumen/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/guest.css" media="screen" title="guest room">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+    <nav class="navbar fixed-top navbar-light bg-light">
+        <a class="navbar-brand" href="/main.html">Office App</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8">
+
+                <div id="canWrap">
+                    <img src="" id="play">
                 </div>
-            
+
+                <div id="overcan"><i class="fa fa-circle text-danger Blink"></i>&nbsp; LIVE MEETING</div>
+
+                <!-- <input type="button" id="mixBut" class="btn start"  value="Start Meeting" /> -->
+                <!-- <button type="button" class="btn btn-success">Start Meeting</button> -->
+
+                <div class="messages-wrapper">
+                    <textarea name="" id="msgList" cols="118" rows="5" disabled></textarea>
+                    <form>
+                        <input id="message" required placeholder="Have a question ask it here!"></input>
+                        <button type="button" class="btn btn-primary" id="subBtn">Message The Group</button>
+                    </form>
+                </div>
+
+
             </div>
+            <div class="col-md-4">
+
             
-            
-             
-              <!-- Modal -->
-              <div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                            <p> Join the meeting!</p>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> 
-             
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center" id="lefthead">
+                        <h2><strong>Members</strong></h2>
                     </div>
-                    <div class="modal-body">
-             
-                        <div class="container">
-                            <div class="row">
-                              
-                                <ul class="list-group ">
-                                  <!-- <li class="list-group-item new-item"> -->
-                                    <form class="createUser">
-                                        <div class="form-group">
-                                          <label for="user">Name:</label>
-                                          <input type="text" id="user">
-                                        </div>
-                                        <div class="form-group">
-                                              Email:  <input id="email" type="email" placeholder="Enter your email">
-                                        </div>
-                                        <a href="guest.html"><button id="enter" data-dismiss="modal" aria-label="Close" class="btn btn-primary btn-lg " type="submit" value="Submit">Enter Room</button></a>
-                                    </form>
-                                  <!-- </li> -->
-                                  <span class="todo-container">
-                                  </span>
-                                </ul>
-                              
-                            </div>
-                          </div>
+                    <div class="panel-body text-center">
+                        
                     </div>
-             
-                  </div>
                 </div>
-              </div>
-            
-            </body>
-            <script src="/socket.io/socket.io.js"></script>
-            <script src="/js/guest.js"></script>
-            
-            <script>
-            $(document).ready(function () {
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p> Join the meeting!</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                </div>
+                <div class="modal-body">
+
+                    <div class="container">
+                        <div class="row">
+
+                            <ul class="list-group ">
+                                <!-- <li class="list-group-item new-item"> -->
+                                <form class="createUser">
+                                    <div class="form-group">
+                                        <label for="user">Name:</label>
+                                        <input type="text" id="name">
+                                    </div>
+                                    <div class="form-group">
+                                        Email: <input id="email" type="email" placeholder="Enter your email">
+                                    </div>
+                                    <a href="guest.html"><button id="enter-room" data-dismiss="modal" aria-label="Close"
+                                            class="btn btn-primary btn-lg " type="submit" value="Submit">Enter Room</button></a>
+                                </form>
+                                <!-- </li> -->
+                                <span class="todo-container">
+                                </span>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/guest.js"></script>
+    <script>
+        $(document).ready(function () {
             $('#memberModal').modal('show');
-            });
-            // const textArea = document.getElementById("msgList");
-            // var socket = io();
-            // socket.on("message", (data) => {
-            //     $("#msgList").append("\n" + data);
-            //     textArea.scrollTop = textArea.scrollHeight;
-            // })
-            // socket.on("messages", (data) => {
-            //     if (data.length > 0) {
-            //         for (let i = 0; i < data.length; i++) {
-            //             $("#msgList").append("\n" + data[i]);
-            //             textArea.scrollTop = textArea.scrollHeight;
-            //         }
-            //     }
-            // });
-            // socket.on('stream',(image)=>{
-            //     $('#play').attr('src',image);
-            //     $('#aplay').attr('src',image);
-            //     console.log(image);
-                
-            // });
-            //     var mixBut = document.getElementById("mixBut");
-              
-            //   mixBut.addEventListener("click", Start);
-              
-            //   function Start(){
-            //       console.log("Started");
-            //       mixBut.removeEventListener("click", Start);
-            //       mixBut.addEventListener("click", Stop);
-            //       mixBut.value = "Stop Meeting";
-            //   }
-              
-            //   function Stop(){
-            //       console.log("Stopped");
-            //       mixBut.removeEventListener("click", Stop);
-            //       mixBut.addEventListener("click", Start);
-            //       mixBut.value = "Start Meeting";
-            //   }
-              
-              </script>
+        });         
+    </script>
+
+</body>
+
+
 
 
 </html>

@@ -1,0 +1,77 @@
+body {
+  padding-top: 10%;
+}
+
+img {
+  width: 100%;
+  /* float: left; */
+}
+
+.col {
+  background-color: #FA4A8A;
+}
+
+.btn {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  /* background-color: lightgray; */
+}
+
+.start {
+              
+  background-color: lightgray;
+}
+
+#subBtn {
+  margin-bottom: 10%;
+}
+form{
+width:100%;
+display:grid;
+grid-template-columns:2; 
+}
+form textarea{
+min-height:10vh;
+}
+canvas{
+  border: solid 1px black;
+  display: none;
+}
+#canWrap{
+  text-align: center;
+ 
+}
+#msgList {
+  width: 100%;
+  height: 120px;
+  position: relative;
+  top: -20px;
+}
+#video {
+  width: 100%;
+}   
+#message {
+  margin-bottom: 11px;
+  margin-top: -18px;
+}
+.linker {
+  margin-top: 25px;
+}  
+.Blink {
+animation: blinker 1.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+}
+@keyframes blinker {  
+from { opacity: 1; }
+to { opacity: 0; }
+}
+#overcan {
+  top: -35px;
+  right: -10px;
+  position: relative;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+      color: white;
+}

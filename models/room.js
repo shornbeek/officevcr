@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
     var Room = sequelize.define("Room", {
         roomID:{ 
             type: DataTypes.INTEGER,
@@ -21,4 +21,3 @@ module.exports = function(sequelize, DataTypes) {
     
       return Room;
 }
-

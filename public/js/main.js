@@ -21,8 +21,8 @@ $(document).ready(function(){
         var newUser = {
             name: $("#user").val().trim(),
             email: $("#email").val().trim(),
-            // random: Random(),
-            message: []
+            random: Random(),
+            // message: []
         }
         console.log(newUser);
         $.post("api/users", newUser).then(function(data){
@@ -64,7 +64,3 @@ url.searchParams.append('x', newUser.random);
 
 // Retrieve
 document.getElementById("result").innerHTML = localStorage.getItem("id");
-
-
-
-

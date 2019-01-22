@@ -7,14 +7,11 @@
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/lumen/bootstrap.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+  <link rel="stylesheet" href="css/main.css" media="screen" title="main page">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
-
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
@@ -22,78 +19,6 @@
 </head>
 
 
-<style>
-
-
-  #mymodal {
-    /* margin-right: 40%;
-    margin-left: 40%; */
-    margin-top: 30px;
-    margin-bottom: 50px;
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  .list-group-item {
-    position: relative;
-    display: block;
-    padding: 0.75rem 1.25rem;
-    margin-bottom: -1px;
-    background-color: #fff;
-    border: 0;
-  }
-
-  ul {
-    margin-left: 30%;
-    margin-right: 20%;
-  }
-
-  img {
-    width: 100%;
-    max-width: 900px;
-    margin-top: 20px;
-  }
-
-  .modal-btn {
-    border-color: #127ba3;
-    width: 100%;
-  }
-
-  h1 {
-    text-align: center;
-    margin-top: 80px;
-  }
-
-  h2 {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 50px;
-  }
-
-  p {
-    color: gray;
-    text-align: center;
-    margin-top: 15px;
-  }
-
-  .devise {
-    max-width: 500px;
-    margin-top: 20px;
-  }
-
-  .h4 {
-    margin-bottom: 20px;
-  }
-  /* .far {
-    width: 100px;
-    height: 100px;
-    text-align: center;
-  }
-  .fas {
-    text-align: center;
-  } */
-
-
-</style>
 
 <body>
 
@@ -101,83 +26,83 @@
     <a class="navbar-brand" href="/main.html">Office App</a>
 
     <div class="footer">
-      <a href="mailto:Stephen_Hornbeek@yahoo.com?Subject=Room%20Key:%20http://localhost:8080/conference.html" data-toggle="modal"
-        data-target="#myModal" class="room" target="_top">Get Room Key #</a>
+      <a href="mailto:Stephen_Hornbeek@yahoo.com?Subject=Room%20Key:%20http://localhost:8080/conference.html"
+        data-toggle="modal" data-target="#myModal" target="_top">Get Room Key #</a>
     </div>
     <!-- <a class="navbar-brand" href="https://socket.io/">Share Key# http://localhost:8080/conference.html</a> -->
   </nav>
+  <br>
+  <br>
+  <br>
+  <!-- Button trigger modal -->
+  <div class="col-md-12 text-center">
+      <h1 class="text-center">Simply Better Web Conferencing</h1>
+      <p class="text-center">Host and attend free web meetings anywhere, any time.</p>
 
-
+  
+  </div>
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
-          <h1>Simply Better Web Conferencing</h1>
-          <p>Host and attend free web meetings anywhere, any time.</p>
-
-        <!-- Button trigger modal -->
-        <center>
-          <button type="button" id="mymodal" class="btn btn-primary btn-lg room" data-toggle="modal" data-target="#myModal">
-            Get Virtual Conference Room
-            <!-- Host A Meeting -->
-          </button>
-        </center>
-       
-        <center>
-          <img src="https://bluejeans.github.io/api-rest-meetings/site/img/bjnmeeting.png">
-        </center>
-        <h2>No credit card. No commitment. Unlimited meetings free forever!</h2>
-
-
-        <center>
-            <img src="https://trueconf.com/images/devices1-w450.png" class="devise">
-         
-          <h2>Works on All devises</h2>
-         
-          </center>
-
-          <div class="container">
-              <div class="row">
-                <div class="col-sm">
-                  <center>
-                    <i class="fas fa-video fa-5x"></i>
-                  <p>Video and audio conferencing with no software downloads!</p>
-                </center>
-                </div>
-                <div class="col-sm">
-                  <center>
-                  <i class="far fa-comment-alt fa-5x"></i>
-                 <p>Live video and text chat with all meeting guest.</p>
-                </center>
-                </div>
-                <div class="col-sm">
-                  <center>
-                    <i class="far fa-address-card fa-5x"></i>
-                    <p>Personal URL links everyone directly into the meeting.</p>
-                  </center>
-                </div>
-              </div>
-            </div>
-        
-          <center> <button type="button" id="mymodal" class="btn btn-primary btn-lg room" data-toggle="modal" data-target="#myModal">
+      <div class="col-sm-12 text-center">
+          <button type="button" id="mymodal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
               Get Virtual Conference Room
-                <!-- Get Mobile Conference Room -->
-              </button>  </center>
+              <!-- Get Mobile Conference Room -->
+            </button>
+      </div>
+      <div class="col-sm-12 text-center img-fluid">
+        <img src="https://bluejeans.github.io/api-rest-meetings/site/img/bjnmeeting.png">
+        <h2>No credit card. No commitment. Unlimited meetings free forever!</h2>
+      </div>
+
+      <div class="col-sm-12 text-center img-fluid">
+        <img src="https://trueconf.com/images/devices1-w450.png" class="devise">
+        <h2>Works on All devises</h2>
+      </div>
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 text-center">
+
+            <i class="fas fa-video fa-5x"></i>
+            <p>Video and audio conferencing with no software downloads!</p>
+
+          </div>
+          <div class="col-sm-4 text-center">
+
+            <i class="far fa-comment-alt fa-5x"></i>
+            <p>Live video and text chat with all meeting guest.</p>
+
+          </div>
+          <div class="col-sm-4 text-center">
+
+            <i class="far fa-address-card fa-5x"></i>
+            <p>Personal URL links everyone directly into the meeting.</p>
+
+          </div>
+        </div>
       </div>
     </div>
+    <!-- Button trigger modal -->
+    <div class="col-sm-12 text-center">
+      <button type="button" id="mymodal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Get Virtual Conference Room
+        <!-- Get Mobile Conference Room -->
+      </button>
+    </div>
+
   </div>
+
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4> Sign up to get a room key!</h4>
-
+          <p> Sign up to get a room key!</p>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-
-
 
 
         </div>
@@ -185,7 +110,7 @@
 
           <div class="container">
             <div class="row">
-              <ul class="list-group ">
+              <ul class="list-group">
                 <!-- <li class="list-group-item new-item"> -->
                 <!-- <form class="createUser"> -->
                 <div class="form-group">
@@ -213,7 +138,6 @@
       </div>
     </div>
   </div>
-
 
 
   <!-- <div id="result"></div> -->
