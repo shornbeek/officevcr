@@ -30,6 +30,17 @@ $("#subBtn").on("click", (e) => {
 
 });
 
+$(".chatform").submit ( (event)=> {
+    console.log("hello ")
+
+event.preventDefault();
+var user = localStorage.getItem("name");
+var email = localStorage.getItem("email");
+var emit = user + ": " + $("#message").val();
+socket.emit("message", emit);
+$("#message").val("");
+})
+
 
 // var newUser = {
 //     name: $("#user").val().trim(),
@@ -151,15 +162,17 @@ socket.on("listUsers", (data)=>{
     }
 });
 
-$(".chatform").submit((event)=> {
-    event.preventDefault();
-   
-    var user = localStorage.getItem("name");
-    var email = localStorage.getItem("email");
-    var emit = user + ": " + $("#message").val();
-    socket.emit("message", emit);
-    $("#message").val("");
-    })
+// $(".chatform").submit((event)=> {
+//     event.preventDefault();
+
+//     var user = localStorage.getItem("name");
+//     var email = localStorage.getItem("email");
+//     var emit = user + ": " + $("#message").val();
+//     socket.emit("message", emit);
+//     $("#message").val("");
+//     })
+
+  
     
 
 socket.on('stream', (image) => {
