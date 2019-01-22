@@ -39,11 +39,8 @@ io.on("connection", (socket) => {
     io.emit("message", msg);
   });
   socket.on("stream", (image)=> {
-    // if(image ===null){
-    //   socket.emit("stream", )
-    // }
     socket.broadcast.emit("stream", image);
-   
+  
   });
   socket.on("addUser", (user)=> {
     curentUsers.push(user);
@@ -55,6 +52,6 @@ io.on("connection", (socket) => {
     curentUsers.splice(i, 1);
     io.emit("listUsers", curentUsers);
   });
-
+  
 });
 

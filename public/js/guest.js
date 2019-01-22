@@ -108,7 +108,9 @@ $("#enter-room").on("click", function (event) {
     };
     socket.emit("addUser", newUser);
     console.log(newUser);
-
+    localStorage.setItem("name", newUser.name);
+    localStorage.setItem("email", newUser.email);
+    // localStorage.setItem("id", newUser.random);
     // Send an AJAX POST-request with jQuery
     $.post("/api/users", newUser)
         // On success, run the following code
