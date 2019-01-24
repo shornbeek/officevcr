@@ -127,4 +127,4 @@ $(function () {
     }, 5);
 });
 
-// document.getElementById("result").innerHTML = localStorage.getItem("id");
+document.getElementById("result").innerHTML = localStorage.getItem("id");

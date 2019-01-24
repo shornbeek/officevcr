@@ -72,7 +72,6 @@ module.exports = (app) => {
         db.User.create({
             name: req.body.name,
             email: req.body.email,
-            // comments: req.body.comments
         }).then(function (dbTodo) {
             // We have access to the new todo as an argument inside of the callback function
             res.json(dbTodo);

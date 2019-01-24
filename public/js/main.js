@@ -1,62 +1,66 @@
 // // Place-holder for main.js
 
-$(document).ready(function () {
+$(document).ready(function(){
 
-    // $(".room").on("click", function (event) {
-
-    
-    // });
-
-
-
-    $("#start").on("click", function (event) {
-
-        var newUser = {
-            name: $("#user").val().trim(),
-            email: $("#email").val().trim(),
-            comments: ["messageA","messageB","messageC..." ]
-            // message: []
-        }
-        console.log(newUser);
-        $.post("api/users", newUser).then(function (data) {
-            console.log(data)
-        });
-
+    $(".room").on("click", function(event) {
+             
         var newRoom = {
             roomID: Random(),
-            //have socket io add the ids here on userID
-            userID: ["id1", "id2", "id3"]
+            userID: [Random(),]
         }
         console.log(newRoom);
-        $.post("api/room", newRoom).then(function (data) {
+        $.post("api/room", newRoom).then(function(data){
             console.log(data)
         });
-
-
-        // Clear localStorage
-        localStorage.clear();
-
-        // Store all content into localStorage         
-        localStorage.setItem("name", newUser.name);
-        localStorage.setItem("email", newUser.email);
-        localStorage.setItem("id", newRoom.roomID);
-        localStorage.setItem("usersIdInRoom", newRoom.userID);
     });
 
 
-    $("#name-display").text(localStorage.getItem("name"));
-    $("#email-display").text(localStorage.getItem("email"));
 
-});
+    $("#start").on("click", function(event) {
+        
+        var newUser = {
+            name: $("#user").val().trim(),
+            email: $("#email").val().trim(),
+            random: Random(),
+            // message: []
+        }
+        console.log(newUser);
+        $.post("api/users", newUser).then(function(data){
+            console.log(data)
+        });
 
-function Random() {
-    return Math.floor(Math.random() * 1000000000);
-}
+        
+           // Clear localStorage
+           localStorage.clear();
+    
+    // Store all content into localStorage
+    // localStorage.setItem(newUser);
+          
+    localStorage.setItem("name", newUser.name);
+    localStorage.setItem("email", newUser.email);
+    localStorage.setItem("id", newUser.random);
+    });
 
-function randomValue() {
-    document.getElementById('start').value = Random();
-    // console.log(Random());
-}
+    
+        $("#name-display").text(localStorage.getItem("name"));
+        $("#email-display").text(localStorage.getItem("email"));
+      
+        var url = new URL("http://localhost:8080/?x=1&y=2");
+// If your expected result is "http://foo.bar/?x=1&y=2&x=42"
+url.searchParams.append('x', newUser.random);
+// If your expected result is "http://foo.bar/?x=42&y=2"
+// url.searchParams.set('x', 42);
+    
+    });
+    
+    function Random() {
+      return Math.floor(Math.random() * 1000000000);
+    }
+    
+    function randomValue() {
+      document.getElementById('start').value = Random();
+      console.log(Random());
+    }
 
 // Retrieve
 // document.getElementById("result").innerHTML = localStorage.getItem("id");
